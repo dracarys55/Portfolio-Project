@@ -1,0 +1,234 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+    //再複習一次為甚麼要設定這些
+
+}
+
+body{
+    position:relative
+}
+
+.orange{
+    position:absolute;
+    top:-10vh;
+    right:0;
+    z-index: -1;
+}
+
+
+header{
+    nav{
+        width:100%;
+        ul{
+            width:70%;
+            display: flex;
+            list-style-type: none;
+            justify-content: space-around;
+            padding: 2rem;
+            li{
+                font-size: 1.75rem;
+                a{
+                    color:black;
+                    text-decoration: none;
+    
+                }
+            }
+        }
+    }
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+
+
+    section.left{
+        flex:3 1 500px;
+        ///請了解個別代表甚麼意思
+        h1{
+            font-size: 4rem;
+            color: #e0895B;
+            padding:1rem;
+        }
+        P{
+            font-size: 1.5rem;
+            padding:1rem 2rem
+        }
+        
+        
+    }
+
+
+    section.right{
+        flex: 1 1 600px;
+        position: relative;
+        ///position為甚麼都要成雙成對去設計
+        img{
+            border-radius: 50%;
+            width: 23vw;
+            height: 23vw;
+            position: absolute;
+            top:45vh;
+            right:25vw;
+            transform: translateY(-50%);
+            ///????///
+        }
+    }
+
+    section.table{
+        flex: 3 1 500px;
+        padding: 2rem;
+        table{
+            border-collapse: collapse;
+            //border-collapse 如何使用///@at-root
+            font-size: 1.5rem;
+            tr{
+                border-bottom: 2px solid gray;
+                transition: all 0.2s ease ;
+                td{
+                    padding: 1rem;
+                }
+                &:hover{
+                    background-color: #ffd2b8;
+                }
+            }
+        }
+    }
+
+    section.picture{
+        flex: 1 1 600px;
+        img{
+            width: 30vw;
+        }
+        div.orangerect{
+            width:30vw;
+            height: 80vh;
+            background-color: #e0895B;
+            position: absolute;
+            top: 120px;
+            left:800px;
+            z-index: -1;
+            
+        }
+    }
+}
+
+section.form{
+    flex: 1 1 600px;
+    align-items: center;
+    form{
+        min-height: 70vh;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        
+        
+        div{
+            margin: 0.5rem;
+            input,textarea {
+                background-color: #ecb392;
+                color: rgb(255, 253, 253);
+                font-size: 1.25rem;
+                padding: 0.5rem 0.25rem;
+                border: none;
+                width: 80%;
+            }
+            textarea{
+                vertical-align: top;
+            }
+            label{
+                font-size: 1.5rem;
+                
+            }
+
+        }
+        button{
+            align-self: center;
+            width: 10rem;
+            height: 10rem;
+            padding:1rem;
+            background-color: #e0895B;
+            font-size: 1.5rem;
+            color: white;
+            border: none;
+            cursor: pointer;       
+            
+            
+        }
+    }
+}
+
+section.contact{
+    flex:1 1 500px;
+    margin: 0.5rem;
+    h2{
+        font-size: 1.7rem;
+        align-content: center;
+        letter-spacing: 0.2rem;
+    }
+    
+}
+footer{
+    display: flex;
+    a{
+        padding: 2rem;      
+    }
+}
+
+.active{
+    color: #e0895B;
+}
+
+///這邊也要回去複習///
+@media screen and (max-width:1100px) {
+    .orange{
+        opacity: 0.5;
+        ///opacity甚麼意思
+    }
+    header{
+        nav{
+            ul{
+                width: 100%;
+                flex-direction: column;
+                li{
+                    padding:1rem 0rem;
+                    border-bottom: 2px solid gray;
+                }
+            }
+        }
+    }
+    main{
+        section.right{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 3rem;
+            img{
+                position:static;
+                ///這裡改完之後照片就覆蓋住字了
+                transition: none;
+                width: 30vw;
+                height: 30vw;
+            }
+        }
+        section.picture{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 80vw;
+                padding: 1rem;
+            }
+            div.orangerect{
+                display: none;
+            }
+        }
+    } 
+    section.left{
+        margin: 1rem;
+    }
+}
